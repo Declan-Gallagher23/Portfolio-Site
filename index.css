@@ -1,0 +1,197 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: black;
+    color: #00FF00;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+main {
+  flex: 1;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  
+}
+
+header ul {
+  display: flex;      
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1.5rem;        
+  list-style: none;
+  padding-top: 1rem;
+  margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+header li a {
+  text-decoration: none;
+  color: inherit;
+  font-size: clamp(0.8rem, 2vw, 1.2rem); /*completely new concept, clamp is used to set a minimum value, preffered value and max value. More up to date approach compared to media queries.*/
+}
+
+#main-text {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header {
+   height: 10vh;
+}
+
+footer {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+footer > a:hover {
+  color: #00ffff;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: dotted underline;
+  font-size: 0.6rem;
+  margin: 0.25rem 0;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: dotted 2px #00ff00;
+  padding-top: 0.5rem;
+  height: 15rem;
+  width: 100%;
+  max-width: 17rem;
+
+}
+.projects_container {
+  padding-top: .875rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-rows: auto;
+  gap: 1rem;
+  justify-items: center;
+}
+.project > img {
+  padding: 0 0.5rem;
+  height: 2rem;
+  width: 2.5rem;
+  background-color: #00FF00;;
+}
+.project_title {
+  font-size: 0.7rem;
+}
+
+.project_description {
+  font-size: 0.6rem;
+  line-height: 1.5;
+  margin: 0 .25rem;
+  text-align: center;
+}
+
+.project_link {
+  font-size: 0.6rem;
+  text-decoration: underline dotted;
+  color: inherit;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+}
+
+.project_link:hover {
+  color: #00ffff;
+}
+.collapsible {
+  margin: 20px 0;
+  padding: .5rem 3rem;
+  font-family: 'Press Start 2P', cursive; /* 8-bit font */
+  color: #00ff00;
+  background: black;
+}
+.collapsible-btn {
+  background: black;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  width: 100%;
+  text-align: left;
+}
+.collapsible-content {
+  margin-top: 10px;
+  padding: 10px;
+  background: #111;
+  border: 2px dashed #00ff00;
+}
+#profile_container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;      
+  align-items: flex-start;
+  gap: 1.5rem;              
+  padding: 1rem;
+  background-color: #111;   
+  border: 2px dashed #00ff00;
+  border-radius: 0.5rem;
+  flex-wrap: wrap;       
+}
+
+/* Profile picture */
+#profile_picture {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;        
+  object-fit: cover;         
+  border: 2px solid #00ff00; 
+  flex-shrink: 0;            
+}
+
+#typewriter-text {
+  text-align: left;
+  max-width: 900px;
+  line-height: 1.4;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin-left: 1rem;
+}
+
+#profile_container h3 {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #00ff00;
+  font-weight: 400;
+}
+
+#profile_container { 
+  flex-wrap: nowrap; 
+}
+
+@media (max-width: 768px) {
+  #profile_container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  #typewriter-text {
+    margin-left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+}
