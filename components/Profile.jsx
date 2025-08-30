@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "/index.css";
 
 const TypewriterText = () => {
-  const fullText = "Hello! I'm Declan Gallagher, a frontend developer based in Chester. I build modern, responsive web apps with HTML, CSS, JS, and React. In my free time, I support Everton FC, play PlayStation, and enjoy evening walks.";
+  const fullText = "Hello! I'm Declan Gallagher, a frontend developer based in Chester. I build modern, responsive web apps with HTML, CSS, JavaScript, and React, and I’m passionate about creating clean, user-friendly digital experiences. In my free time, I support Everton FC, play PlayStation games, and enjoy evening walks to unwind. I also like exploring new tech trends and working on personal projects to keep developing my skills.";
   const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
