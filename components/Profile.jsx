@@ -1,45 +1,51 @@
-import { useState } from "react";
-import Typewriter from "typewriter-effect"
-import "/index.css"
+import { useState, useEffect } from "react";
+import "/index.css";
+
+const TypewriterText = () => {
+  const fullText = "Hello! I'm Declan Gallagher, a frontend developer based in Chester. I build modern, responsive web apps with HTML, CSS, JS, and React. In my free time, I support Everton FC, play PlayStation, and enjoy evening walks.";
+  const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayedText(fullText.slice(0, index + 1)); // safer than prev + char
+        index++;
+      } else {
+        clearInterval(interval); // stop when finished
+      }
+    }, 50); // typing speed
+    return () => clearInterval(interval);
+  }, []);
+
+  return <p>{displayedText}<span className="cursor">_</span></p>;
+};
+
 
 export default function Profile() {
-    const [isOpen, setIsOpen] = useState(false);
-    return (
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
     <div className="collapsible">
       <button 
         className="collapsible-btn" 
-        onClick={() => setIsOpen(!isOpen)}>
+        onClick={() => setIsOpen(!isOpen)}
+      >
         {isOpen ? "▲ Hide Profile Section" : "▼ Show Profile Section"}
       </button>
+
       {isOpen && (
-    <div id="profile_container">
-        <img id="profile_picture" src="./files/profile.jpg" alt="Profile picture of Declan Gallagher"></img>
-        <div id="typewriter-text">
-        <Typewriter
-  onInit={(typewriter) => {
-    typewriter
-      .typeString("Hello! My name is Declan Gallagher, and I’m a frontend developer based in Chester.")
-      .pauseFor(2000) // pause for 1 second
-      .typeString(" I have a passion for building beautiful, functional websites and applications.")
-      .pauseFor(2000)
-      .typeString(" With a growth mindset, I continually challenge myself to develop my skills and deliver better digital experiences.")
-      .pauseFor(2000)
-      .typeString("I build modern, responsive web applications using HTML, CSS, JavaScript, and React.")
-      .pauseFor(2000)
-      .typeString("I enjoy supporting Everton FC, playing playstation games and going for walks of an evening.")
-      .start(); 
-  }}
-  options={{
-    cursor: "_",
-    delay: 50, // typing speed
-  }}
-/>
-</div>
-
-
-    </div>
+        <div id="profile_container">
+          <img 
+            id="profile_picture" 
+            src="./files/profile.jpg" 
+            alt="Profile picture of Declan Gallagher"
+          />
+          <div id="typewriter-text">
+            <TypewriterText />
+          </div>
+        </div>
       )}
-
-
     </div>
-    ) }
+  );
+}
