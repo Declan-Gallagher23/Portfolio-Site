@@ -21,21 +21,34 @@ export default function Projects() {
         ));
 
 
-    return (
-            <div className="collapsible">
-      <button 
-        className="collapsible-btn" 
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? "▲ Hide Projects Section" : "▼ Show Projects Section"}
-      </button>
-      
-      {isOpen && (
-    <div class="projects_container" id="projects_container">
-      {repositoryData}
-    </div>
-      )}
-    </div>
-
-)
-    }
+return (
+  <div className="collapsible">
+    <button 
+      className="collapsible-btn" 
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      {isOpen ? "▲ Hide Projects Section" : "▼ Show Projects Section"}
+    </button>
+    
+    {isOpen && ( 
+      <>
+        <div id="key_container">
+          <h3>Key</h3>
+          <div className="keys">
+          <div className="key">
+            <img src="/cozy.png" className="key_image" alt="Game Icon"></img>
+            <span> - Knowledge Growth</span>
+          </div>
+          <div className="key">
+            <img src="/retro-gamepad.png" className="key_image" alt="Game Icon"></img>
+            <span> - Games</span>
+          </div>
+          </div>
+        </div>
+        <div className="projects_container" id="projects_container">
+          {repositoryData}
+        </div>
+      </>
+    )}
+  </div>
+)}
