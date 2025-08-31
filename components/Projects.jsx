@@ -12,7 +12,7 @@ export default function Projects() {
     const repositoryData = repo.map((item) =>
          (
             <div class="project">
-                <img class="project_image" src={item.name.includes("Game")?"/retro-gamepad.png":"/files/cozy.png"} alt=""></img>
+                <img class="project_image" src={item.name.includes("Game")?"/retro-gamepad.png":"/cozy.png"} alt=""></img>
                 <h3 class="project_title">{item.name}</h3>
                 {item.description && <p class="project_description">{item.description}</p>}
                 {item.languages && <p class="project_language">{item.language}</p>}
