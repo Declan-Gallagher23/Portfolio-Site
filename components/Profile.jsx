@@ -38,7 +38,7 @@ export default function Profile() {
         <div id="profile_container">
           <img 
             id="profile_picture" 
-            src="./files/profile.jpg" 
+            src="/profile.jpg" 
             alt="Profile picture of Declan Gallagher"
           />
           <div id="typewriter-text">
