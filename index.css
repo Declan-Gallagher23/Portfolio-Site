@@ -250,15 +250,31 @@ footer a {
 }  
 @media (max-width: 480px) {
   header {
+    font-size: 1rem;
     padding-right: 0.5rem;
-    padding-top: 1rem;
+
   }
   body {
     font-size: 1.2rem;
   }
   #main-text {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 1rem;
   }
+  footer a{
+    font-size: .6=5rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .project {
+    width: 75vw;
+    max-width: none;
+  }
+  ul li a{
+    font-size: 0.8rem;
+  }
+
 }
 @keyframes blink {
   50% {
