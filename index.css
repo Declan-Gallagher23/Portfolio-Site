@@ -254,10 +254,10 @@ footer a {
     padding-top: 1rem;
   }
   body {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   #main-text {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 @keyframes blink {

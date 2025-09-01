@@ -5,15 +5,14 @@ import Projects from "./components/Projects"
 import Profile from "./components/Profile"
 
 export default function App() {
-    return (
-        <>
-        <Header />
-        <main>
-            <Main/>
-            <Profile/>
-            <Projects/>
-        </main>
-        <Footer/>
+  return (
+    <>
+          <Header />
+          <main>
+            <Main />
+            <Profile />
+            <Projects />
+          </main>
+          <Footer />
         </>
-    )
-} 
+      )}
