@@ -263,16 +263,17 @@ footer a {
     padding: 0 1rem;
   }
   footer a{
-    font-size: .6=5rem;
+    font-size: .6rem;
     text-align: center;
     padding: 0 1rem;
   }
   .project {
     width: 75vw;
     max-width: none;
+
   }
   ul li a{
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
 }
