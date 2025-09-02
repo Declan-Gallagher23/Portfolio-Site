@@ -14,7 +14,7 @@ const TypewriterText = () => {
       } else {
         clearInterval(interval); // stop when finished
       }
-    }, 50); // typing speed
+    }, 40); // typing speed
     return () => clearInterval(interval);
   }, []);
 
