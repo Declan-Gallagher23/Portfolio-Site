@@ -121,7 +121,7 @@ footer a {
 .collapsible {
   margin: 20px 0;
   padding: .5rem 3rem;
-  font-family: 'Press Start 2P', cursive; /* 8-bit font */
+  font-family: 'Press Start 2P', cursive;
   color: #00ff00;
   background: black;
 }
@@ -152,7 +152,12 @@ footer a {
   border: 2px dashed #00ff00;
   border-radius: 0.5rem;
   flex-wrap: wrap;       
+  justify-content: center;
 }
+#profile_container.hidden {
+  display: none;
+}
+
 .key_image{
   padding: 0 0.5rem;
   height: 2rem;
@@ -182,15 +187,15 @@ footer a {
   padding-left: 0.5rem;
 }
 .keys {
-  display: flex;         /* put them in a row */
+  display: flex;
   flex-direction: row;
-  justify-content: center; /* center them under the heading */
-  align-items: center;     /* vertical alignment */
-  gap: 2rem;             /* space between each item */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;             
   width: 50vw;
   padding-bottom: 0.5rem;
 }
-/* Profile picture */
+
 #profile_picture {
   width: 180px;
   height: 180px;
@@ -234,9 +239,9 @@ footer a {
     text-align: center;
   }
   .keys {
-  display: flex;         /* put them in a row */
+  display: flex;  
   width: auto;
-  flex-direction: column; /* center them under the heading */
+  flex-direction: column;
   justify-content: space-between;
   gap: 0.5rem;
 }

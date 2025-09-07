@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "/index.css";
 
 const TypewriterText = () => {
-  const fullText = "Hello! I'm Declan Gallagher, a frontend developer based in Chester. I build modern, responsive web apps with HTML, CSS, JavaScript, and React, and I’m passionate about creating clean, user-friendly digital experiences. In my free time, I support Everton FC, play PlayStation games, and enjoy evening walks to unwind. I also like exploring new tech trends and working on personal projects to keep developing my skills.";
+  const fullText = "Hello! I'm Declan Gallagher, a front-end developer based in Chester. I build modern, responsive web apps with HTML, CSS, JavaScript, and React, and I’m passionate about creating clean, user-friendly digital experiences. In my free time, I support Everton FC, play PlayStation games, and enjoy evening walks to unwind. I also like exploring new tech trends and working on personal projects to keep developing my skills.";
   const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
@@ -22,8 +22,7 @@ const TypewriterText = () => {
 };
 
 
-export default function Profile() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Profile({isOpen, setIsOpen}) {
 
   return (
     <div className="collapsible">
@@ -34,8 +33,9 @@ export default function Profile() {
         {isOpen ? "▲ Hide Profile Section" : "▼ Show Profile Section"}
       </button>
 
+      <div id="profile_container" className={isOpen? "": "hidden"}>
       {isOpen && (
-        <div id="profile_container">
+          <>
           <img 
             id="profile_picture" 
             src="/profile.jpg" 
@@ -44,8 +44,8 @@ export default function Profile() {
           <div id="typewriter-text">
             <TypewriterText />
           </div>
-        </div>
+        </>
       )}
     </div>
-  );
-}
+  </div>
+  )}

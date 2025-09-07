@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 
-export default function Projects() {
+export default function Projects({isOpen, setIsOpen}) {
     const [repo, setRepo] = useState([])
-    const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
         fetch('https://api.github.com/users/Declan-Gallagher23/repos')
         .then(response => response.json())
@@ -12,11 +11,11 @@ export default function Projects() {
     const repositoryData = repo.map((item) =>
          (
             <div key={item.name} class="project">
-                <img class="project_image" src={item.name.includes("Game")?"/retro-gamepad.png":"/cozy.png"} alt=""></img>
-                <h3 class="project_title">{item.name}</h3>
-                {item.description && <p class="project_description">{item.description}</p>}
-                {item.languages && <p class="project_language">{item.language}</p>}
-                <a href={item.html_url} class="project_link">View Repository</a>
+                <img className="project_image" src={item.name.includes("Game")?"/retro-gamepad.png":"/cozy.png"} alt=""></img>
+                <h3 className="project_title">{item.name}</h3>
+                {item.description && <p className="project_description">{item.description}</p>}
+                {item.languages && <p className="project_language">{item.language}</p>}
+                <a href={item.html_url} className="project_link">View Repository</a>
             </div> 
         ));
 

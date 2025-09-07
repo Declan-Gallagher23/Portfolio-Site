@@ -3,15 +3,21 @@ import Main from "./components/Main"
 import Footer from "./components/Footer"
 import Projects from "./components/Projects"
 import Profile from "./components/Profile"
+import {useState} from 'react'
 
 export default function App() {
+    const [isOpen, setIsOpen] = useState(false)
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
+    const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+
   return (
     <>
-          <Header />
+          <Header   setIsProfileOpen={setIsProfileOpen} 
+  setIsProjectsOpen={setIsProjectsOpen} />
           <main>
             <Main />
-            <Profile />
-            <Projects />
+            <Profile setIsOpen={setIsProfileOpen} isOpen={isProfileOpen} />
+            <Projects setIsOpen={setIsProjectsOpen} isOpen={isProjectsOpen}/>
           </main>
           <Footer />
         </>
