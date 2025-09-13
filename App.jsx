@@ -6,7 +6,6 @@ import Profile from "./components/Profile"
 import {useState} from 'react'
 
 export default function App() {
-    const [isOpen, setIsOpen] = useState(false)
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [isProjectsOpen, setIsProjectsOpen] = useState(false);
 

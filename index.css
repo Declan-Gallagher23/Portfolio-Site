@@ -1,3 +1,4 @@
+/* STYLING FOR PAGE*/
 html, body {
     margin: 0;
     height: 100%;
@@ -17,13 +18,14 @@ body {
 main {
   flex: 1;
 }
-
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;  
 }
+/********************************************/
 
+/* HEADER COMPONENT */  
 header ul {
   display: flex;      
   flex-direction: row;
@@ -41,17 +43,21 @@ header li a {
   color: inherit;
   font-size: clamp(0.8rem, 2vw, 1.2rem); /*completely new concept, clamp is used to set a minimum value, preffered value and max value. More up to date approach compared to media queries.*/
 }
+header {
+  height: 10vh;
+}
+/***************************/
 
+/* MAIN CONTAINER */
 #main-text {
   height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-header {
-   height: 10vh;
-}
+/***************************/
 
+/* FOOTER COMPONENT */  
 footer {
   height: 10vh;
   display: flex;
@@ -70,7 +76,9 @@ footer a {
   font-size: 0.6rem;
   margin: 0.25rem 0;
 }
+/**************************/
 
+/* PROJECT CONTAINER */
 .project {
   display: flex;
   flex-direction: column;
@@ -141,23 +149,6 @@ footer a {
   background: #111;
   border: 2px dashed #00ff00;
 }
-#profile_container {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;      
-  align-items: flex-start;
-  gap: 1.5rem;              
-  padding: 1rem;
-  background-color: #111;   
-  border: 2px dashed #00ff00;
-  border-radius: 0.5rem;
-  flex-wrap: wrap;       
-  justify-content: center;
-}
-#profile_container.hidden {
-  display: none;
-}
-
 .key_image{
   padding: 0 0.5rem;
   height: 2rem;
@@ -195,6 +186,25 @@ footer a {
   width: 50vw;
   padding-bottom: 0.5rem;
 }
+/*******************************/
+
+/* PROFILE CONTAINER */
+#profile_container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;      
+  align-items: flex-start;
+  gap: 1.5rem;              
+  padding: 1rem;
+  background-color: #111;   
+  border: 2px dashed #00ff00;
+  border-radius: 0.5rem;
+  flex-wrap: wrap;       
+  justify-content: center;
+}
+#profile_container.hidden {
+  display: none;
+}
 
 #profile_picture {
   width: 180px;
@@ -204,18 +214,6 @@ footer a {
   border: 2px solid #00ff00; 
   flex-shrink: 0;            
 }
-
-#typewriter-text {
-  text-align: left;
-  max-width: 900px;
-  line-height: 1.4;
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  margin-left: 1rem;
-}
-
 #profile_container h3 {
   margin-top: 1rem;
   font-size: 0.8rem;
@@ -226,7 +224,22 @@ footer a {
 #profile_container { 
   flex-wrap: nowrap; 
 }
+/*************************/
 
+/* TYPEWRITER COMPONENT*/
+#typewriter-text {
+  text-align: left;
+  max-width: 900px;
+  line-height: 1.4;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin-left: 1rem;
+}
+/**************************/
+
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   #profile_container {
     flex-direction: column;
@@ -287,3 +300,4 @@ footer a {
     opacity: 0;
   }
 }
+/***************************/
